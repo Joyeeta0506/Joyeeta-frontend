@@ -1,0 +1,50 @@
+/* ---------- AUTH PAGES (LOGIN + SIGNUP) ---------- */
+.auth-container {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eef5ff;
+}
+
+.auth-box {
+  width: 380px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.auth-box input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.auth-btn {
+  width: 94%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  background: #005ad1;
+}

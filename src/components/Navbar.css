@@ -1,0 +1,31 @@
+.navbar {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  color: royalblue;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.auth-buttons .btn {
+  margin-left: 10px;
+  background: #007bff;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}

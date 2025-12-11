@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./Signup.css";
 
 function Signup() {
@@ -7,38 +6,25 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-
-    try {
-      const res = await axios.post(
-        "https://bookstore-backend-jmob.onrender.com/api/auth/signup",
-        {
-          name,
-          email,
-          password,
-        }
-      );
-
-      alert("Signup successful!");
-      console.log(res.data);
-    } catch (err) {
-      alert("Signup failed! Please try again.");
-      console.log(err);
+  const handleSignup = () => {
+    if (!name || !email || !password) {
+      alert("Please fill out all fields");
+      return;
     }
+
+    alert("Signup Successful! (connect backend later)");
   };
 
   return (
     <div className="signup-container">
       <h2>Create Account</h2>
 
-      <form onSubmit={handleSignup}>
+      <div className="signup-box">
         <input
           type="text"
           placeholder="Enter Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          required
         />
 
         <input
@@ -46,7 +32,6 @@ function Signup() {
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
 
         <input
@@ -54,11 +39,10 @@ function Signup() {
           placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
         />
 
-        <button type="submit">Signup</button>
-      </form>
+        <button onClick={handleSignup}>Signup</button>
+      </div>
     </div>
   );
 }

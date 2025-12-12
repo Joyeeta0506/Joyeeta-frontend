@@ -1,34 +1,29 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <div className="navbar">
-        <h2>BookStore</h2>
+    <nav className="navbar">
+      <h2 className="logo">BookStore</h2>
 
-        <div className="nav-links">
-          <a href="/">Home</a>
-          <a href="/books">Books</a>
-          <a href="/contact">Contact</a>
-          <a href="/about">About</a>
-        </div>
+      {/* Mobile Button */}
+      <button className="menu-btn" onClick={() => setOpen(!open)}>
+        ☰
+      </button>
 
-        <div className="hamburger" onClick={() => setOpen(!open)}>
-          ☰
-        </div>
-      </div>
+      <ul className={open ? "nav-links open" : "nav-links"}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/books">Books</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/about">About</Link></li>
 
-      {/* Mobile menu */}
-      <div className={`mobile-menu ${open ? "show" : ""}`}>
-        <a href="/">Home</a>
-        <a href="/books">Books</a>
-        <a href="/contact">Contact</a>
-        <a href="/about">About</a>
-      </div>
-    </>
+        <li><Link to="/login" className="btn">Login</Link></li>
+        <li><Link to="/signup" className="btn">Signup</Link></li>
+      </ul>
+    </nav>
   );
 }
 

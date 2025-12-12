@@ -1,21 +1,22 @@
-.login-box,
-.signup-box {
-  width: 90%;
+.login-container {
   max-width: 350px;
-  padding: 25px;
+  margin: auto;
+  padding: 20px;
 }
 
-@media (max-width: 480px) {
-  .login-container h2,
-  .signup-container h2 {
-    font-size: 22px;
-  }
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
 
-  input {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 15px;
-  }
+button {
+  width: 100%;
+  padding: 10px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }

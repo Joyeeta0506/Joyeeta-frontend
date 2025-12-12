@@ -1,23 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "./Navbar.css";
 
-export default function Navbar() {
+function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="navbar">
-      <h2 className="logo">BookStore</h2>
+    <>
+      <div className="navbar">
+        <h2>BookStore</h2>
 
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/">Books</Link>
-        <Link to="/">Contact</Link>
-        <Link to="/">About</Link>
+        <div className="nav-links">
+          <a href="/">Home</a>
+          <a href="/books">Books</a>
+          <a href="/contact">Contact</a>
+          <a href="/about">About</a>
+        </div>
+
+        <div className="hamburger" onClick={() => setOpen(!open)}>
+          ☰
+        </div>
       </div>
 
-      <div className="auth-buttons">
-        <Link to="/login" className="btn">Login</Link>
-        <Link to="/signup" className="btn">Signup</Link>
+      {/* Mobile menu */}
+      <div className={`mobile-menu ${open ? "show" : ""}`}>
+        <a href="/">Home</a>
+        <a href="/books">Books</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
       </div>
-    </nav>
+    </>
   );
 }
+
+export default Navbar;

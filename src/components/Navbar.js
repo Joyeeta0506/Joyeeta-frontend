@@ -1,8 +1,12 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+
 
 function Navbar() {
+  const { cart } = useContext(CartContext);
   return (
     <nav className="navbar">
       <h2 className="logo">BookStore</h2>
